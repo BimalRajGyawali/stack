@@ -5,7 +5,7 @@ import core.Stack;
 public class InfixToPostfixConverter {
 	private Stack<Character> stack;
 	private String postFixString;
-	String infixExpression;
+	private String infixExpression;
 	
 	public InfixToPostfixConverter(String infixExpression) {
 		this.stack = new Stack<Character>(infixExpression.length());
