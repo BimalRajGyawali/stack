@@ -3,14 +3,14 @@ package core;
 public class Stack<T> {
     private T[] stack;
     private int top;
-    private final int SIZE;
+    private final int size;
     private static final int DEFAULT_SIZE = 10;
 
     @SuppressWarnings("unchecked")
 	public Stack(int size) {
         this.top = -1;
-        this.SIZE = size;
-        this.stack = (T[]) new Object[this.SIZE];
+        this.size = size;
+        this.stack = (T[]) new Object[this.size];
     }
 
     public Stack() {
@@ -18,7 +18,7 @@ public class Stack<T> {
     }
 
     public void push(T value) {
-        if (this.top >= this.SIZE - 1) {
+        if (this.top >= this.size - 1) {
             System.out.println("Stack is full. Cannot push elements");
         }
         this.top += 1;
