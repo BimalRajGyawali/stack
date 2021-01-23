@@ -5,14 +5,16 @@ import core.Stack;
 public class InfixToPostfixConverter {
 	private Stack<Character> stack;
 	private String postFixString;
-
-	public InfixToPostfixConverter() {
-		this.stack = new Stack<Character>();
+	String infixExpression;
+	
+	public InfixToPostfixConverter(String infixExpression) {
+		this.stack = new Stack<Character>(infixExpression.length());
 		this.postFixString = "";
+		this.infixExpression = infixExpression;
 	}
 
-	public String convert(String infixExpression) {
-		char[] characters = infixExpression.toCharArray();
+	public String convert() {
+		char[] characters = this.infixExpression.toCharArray();
 		for (char character : characters) {
 			if (character == '(') {
 				this.stack.push(character);;
